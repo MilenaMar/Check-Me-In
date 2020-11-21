@@ -2,9 +2,14 @@
 <p>Welcome to Check-Me In </p>
 
 <a href="/signup">signup</a>
+<br>
 <a href="/login">login</a>
-
+<br>
 <a href="/posts">Read post</a>
+<br>
+
+{{#if currentUser}}
 <form id="logout-form" action="/logout" method="POST">
   <button>Logout</button>
 </form>
+{{/if}}

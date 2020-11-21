@@ -1,1 +1,30 @@
-<h1>This is a new Post</h1>
+<h3>User can create a new post</h3>
+
+<form action="/user/newpost" method="POST">
+  <p>Check-Me In:</p>
+  <label for="location-country">Country</label>
+  <input type="text" id="location-country" name="country">
+  <label for="location-city">City:</label>
+  <input type="text" id="location-city" name="city">
+  <br>
+  <label for="budget">Budget:</label>
+  <input type="text" id="budget" name="budget">
+  <label for="currency">Currency:</label>
+  <select id="currency" name="currency">
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+  </select>
+  <label for="days">For how long was your trip:</label>
+  <input type="text" id="days" name="days" placeholder="days">
+  <br>
+  <label for="dates">Date:</label>
+  <input type="date" id="dates" name="when">
+  <label for="description">Title:</label>
+  <input type="text" id="description" name="description">
+  <br>
+  <label for="body">Body of the post</label>
+  <br>
+  <input style="height:30vh; width:30vw" type="text" name="body" placeholder="Tell Us about your experience">
+  <br>
+  <button type="submit">Create your post</button>
+</form>
