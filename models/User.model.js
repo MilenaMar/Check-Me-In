@@ -25,10 +25,7 @@ const userSchema = new Schema({
     type: String,
   },
   about: String,
-  location: {
-    required: true,
-    type: String,
-  },
+  location: String,
   posts: [
     {
       type: mongoose.Schema.Types.ObjectId,
