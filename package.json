@@ -14,9 +14,11 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "hbs": "^4.1.1",
+    "marked": "^1.2.5",
     "mongoose": "^5.10.15",
     "morgan": "^1.10.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "slugify": "^1.4.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

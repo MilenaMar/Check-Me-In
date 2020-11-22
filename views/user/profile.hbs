@@ -1,5 +1,12 @@
 <h1>this is a profile of {{currentUser.username}}</h1>
 
+{{#each currentUser.posts}}
+<h3>{{country}}</h3>
+<h4>{{description}}</h4>
+<p>{{when}}</p>
+{{/each}}
+
+
 <form id="logout-form" action="/logout" method="POST">
   <button>Logout</button>
 </form>

@@ -1,8 +1,49 @@
 <h1>This is settings page</h1>
 
 
+<h2>Update Profile Picture </h2>
+
+<h1>This is a page to Edit information about your profile</h1>
+
+<form action="/user/settings" method="POST">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" value={{currentUser.username}}>
+  <label for="email">email:</label>
+  <input type="email" id="email" name="email" value={{currentUser.email}}>
+  <label for="about">About Me:</label>
+  <input style="height:10vh; width:10vw" type="text" name="about" value={{currentUser.about}}>
+  <label for="location">Country:</label>
+  <input type="location" id="location" name="location" value={{currentUser.location}}>
+  <button type="submit">Submit</button>
+</form>
+{{#if updateMessage}}
+<p>{{updateMessage}}</p>
+{{/if}}
+{{#if errorMessage}}
+<p>{{errorMessage}}</p>
+{{/if}}
+<br>
+<h2>Update your password</h2>
+<form action="/user/updatePassword" method="POST">
+  <label for="oldPassword">Old password:</label>
+  <input type="password" id="oldPassword" name="oldPassword">
+  <label for="password">New password:</label>
+  <input type="password" id="password" name="newPassword">
+  <label for="repeatPassword">Repeat new password:</label>
+  <input type="password" id="repeatPassword" name="repeatPassword">
+  <button type="submit">Submit</button>
+</form>
+
+
 <form id="logout-form" action="/logout" method="POST">
   <button>Logout</button>
 </form>
+
+{{#if updateMessageP}}
+<p>{{updateMessageP}}</p>
+{{/if}}
+{{#if errorMessage}}
+<p>{{errorMessage}}</p>
+{{/if}}
 
 <a href="/user/profile">Go Back</a>

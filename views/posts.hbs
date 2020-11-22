@@ -2,6 +2,8 @@
 
 <a href="/">Go back</a>
 
-
-
-<a href="/user/readmore">Read More</a>
+{{#each post}}
+<h1>{{description}}</h1>
+<h2>{{username}}</h2>
+<a href="/user/readmore/{{slug}}">Read More</a>
+{{/each}}
