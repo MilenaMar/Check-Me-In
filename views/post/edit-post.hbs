@@ -1,0 +1,36 @@
+<h1>Here You can edit yout post</h1>
+<form action="/post/edit/{{_id}}" method="POST">
+  <p>Check-Me In:</p>
+  <label for="location-country">Country</label>
+  <input type="text" id="location-country" name="country" value={{country}}>
+  <label for="location-city">City:</label>
+  <input type="text" id="location-city" name="city" value={{city}}>
+  <br>
+  <label for="budget">Budget:</label>
+  <input type="text" id="budget" name="budget" value={{budget}}>
+  <label for="currency">Currency:</label>
+  <select id="currency" name="currency">
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+  </select>
+  <label for="days">For how long was your trip:</label>
+  <input type="text" id="days" name="days" placeholder="days" value={{days}}>
+  <br>
+  <label for="dates">Date:</label>
+  <input type="date" id="dates" name="when" value={{when}}>
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" value={{title}}>
+  <br>
+  <label for="description">Description:</label>
+  <input type="text" id="description" name="description" value={{description}}>
+  <br>
+  <label for="body">Body of the post</label>
+  <br>
+  <textarea name="body" id="body" cols="50" rows="20">{{body}}</textarea>
+  <br>
+  <button type="submit">Submit Changes</button>
+</form>
+
+<form id="delete-post" action="/post/deletePost/{{_id}}" method="POST">
+  <button>Delete Post</button>
+</form>

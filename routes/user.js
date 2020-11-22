@@ -4,8 +4,7 @@ const Post = require('../models/Post.model');
 const shouldNotBeLoggedIn = require('../middlewares/shouldNotBeLoggedIn'); // user shouldn't be log in
 const isLoggedIn = require('../middlewares/isLoggedIn'); // user needs to be log in
 const bcrypt = require('bcryptjs');
-const mongoose = require('mongoose');
-const saltRounds = 10;
+
 
 ////// User Profile//////////////////////
 router.get('/profile',isLoggedIn,(req,res)=>{

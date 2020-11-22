@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
-const marked = require('marked')
-const slugify = require('slugify')
+const slugify = require('slugify');
 
 const postSchema = new Schema({
   country:{

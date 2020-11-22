@@ -16,6 +16,7 @@
     "hbs": "^4.1.1",
     "marked": "^1.2.5",
     "mongoose": "^5.10.15",
+    "mongoose-dateonly": "^1.0.6",
     "morgan": "^1.10.0",
     "serve-favicon": "^2.5.0",
     "slugify": "^1.4.6"
