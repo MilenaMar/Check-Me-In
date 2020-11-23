@@ -26,6 +26,7 @@ https://trello.com/b/mQ4jWUj7/check-me-in-second-module-project
 ###### Wish List
 
 • Comunity Page - Logged in User Only can see the list of all users and add them as friends
+• Likes for each Post - Logged in User Only can like post.
 
 ## Schemas
 
