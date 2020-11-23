@@ -1,4 +1,15 @@
 <h1>this is a profile of {{currentUser.username}}</h1>
+<img src="{{currentUser.Picture}}" alt="">
+
+<form action="/user/upload-profile-picture" method="POST" enctype="multipart/form-data">
+  <label for="Picture">Update Profile Picture:</label>
+  <input type="file" name="Picture" id="Picture" accept="image/png, image/jpg">
+  <button type="submit">Submit</button>
+</form>
+
+{{#if errorMessagepic}}
+<p>{{errorMessagepic}}</p>
+{{/if}}
 
 {{#each currentUser.posts}}
 <h3>{{country}}</h3>
@@ -9,7 +20,7 @@
 
 
 <form id="logout-form" action="/logout" method="POST">
-  <button>Logout</button>
+  <button type="submit">Logout</button>
 </form>
 <a href="/user/settings">Settings</a>
 

@@ -1,0 +1,13 @@
+<h1>Are you sure you want to leave Us? </h1>
+
+<a href="/user/settings"><button>I change My mid I will stay </button></a>
+<br>
+<form id="delete" action="/user/delete-account" method="POST">
+  <label for="password">Account password:</label>
+  <input type="password" id="password" name="password">
+  <button>Yes Im sure ! Delete my Acount </button>
+</form>
+
+{{#if errorMessageP}}
+{{errorMessageP}}
+{{/if}}

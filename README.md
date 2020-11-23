@@ -37,7 +37,7 @@ https://trello.com/b/mQ4jWUj7/check-me-in-second-module-project
 - Password: String, required
 - Picture: String
 - Location: String
-- Posts: Object -Post Schema
+- Posts: Array of Objects -Post Schema
 
 • Post Model
 
@@ -51,10 +51,10 @@ https://trello.com/b/mQ4jWUj7/check-me-in-second-module-project
 - Title:String
 - Description:String
 - Body: String,
-- Image: String,
-- Likes:Object - User Schema
+- Image: array, String,
+- Likes: Array of Objects - User Schema
 - LikeCount: Number, default to zero
-- Author: Object - User Schema
+- Author: Array of Objects - User Schema
 
 ## Routes
 
@@ -69,14 +69,18 @@ https://trello.com/b/mQ4jWUj7/check-me-in-second-module-project
 - router.get('User/Post/Edit')
 - router.get('/Posts')
 - router.get('/Posts/PostID')
+- router.get('User/delete-account')
 
 • post() method
 
-router.post('/signup')
-router.post('/login')
-router.post('/logout')
-router.post('Post/edit/postId')
-router.post('Post/deletePost/postId')
-router.post('User/settings')
-router.post('User/updatePassword')
-router.post('User/newpost')
+- router.post('/signup')
+- router.post('/login')
+- router.post('/logout')
+- router.post('User/settings')
+- router.post('User/general-settings')
+- router.post('User/updatePassword')
+- router.post('/upload-profile-picture')
+- router.post('User/newpost')
+- router.post('Post/edit/postId')
+- router.post('Post/deletePost/postId')
+- router.post('User/delete-account')

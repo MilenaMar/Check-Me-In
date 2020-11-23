@@ -3,22 +3,20 @@
 
 <h2>Update Profile Picture </h2>
 
+
 <h1>This is a page to Edit information about your profile</h1>
 
-<form action="/user/settings" method="POST">
+<form action="/user/general-settings" method="POST">
   <label for="username">Username:</label>
   <input type="text" id="username" name="username" value={{currentUser.username}}>
   <label for="email">email:</label>
   <input type="email" id="email" name="email" value={{currentUser.email}}>
   <label for="about">About Me:</label>
-  <input style="height:10vh; width:10vw" type="text" name="about" value={{currentUser.about}}>
+  <textarea name="about" id="about" cols="20" rows="10">{{currentUser.about}}</textarea>
   <label for="location">Country:</label>
   <input type="location" id="location" name="location" value={{currentUser.location}}>
   <button type="submit">Submit</button>
 </form>
-{{#if updateMessage}}
-<p>{{updateMessage}}</p>
-{{/if}}
 {{#if errorMessage}}
 <p>{{errorMessage}}</p>
 {{/if}}
@@ -39,11 +37,16 @@
   <button>Logout</button>
 </form>
 
+
+<form id="delete" action="/user/delete-account">
+  <button>Delete Account</button>
+</form>
+
 {{#if updateMessageP}}
 <p>{{updateMessageP}}</p>
 {{/if}}
-{{#if errorMessage}}
-<p>{{errorMessage}}</p>
+{{#if errorMessageP}}
+<p>{{errorMessageP}}</p>
 {{/if}}
 
 <a href="/user/profile">Go Back</a>

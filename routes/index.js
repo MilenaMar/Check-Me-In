@@ -3,10 +3,14 @@ const router  = express.Router();
 const isLoggedIn = require('../middlewares/isLoggedIn');
 const Post = require('../models/Post.model');
 const User = require('../models/User.model');
+const { post } = require('./auth');
 
 /* GET home page */
 router.get('/',(req, res, next) => {
-  res.render('index',{ currentUser: req.session.user });
+  Post.find()
+  .sort({createdAt:'desc'})
+  .populate('author')
+  .then((post)=>res.render('index',{ currentUser: req.session.user, posts:post }))
 });
 
 
@@ -17,6 +21,8 @@ router.get('/posts', (req, res) => {
  .catch(err => console.log(err))})
 
 
+
+ 
 // router.put('/like',isLoggedIn,(req,res)=>{
 //  Post.findByIdAndUpdate(req.body.postid,{
 //    $push:{likes:req.user._id}

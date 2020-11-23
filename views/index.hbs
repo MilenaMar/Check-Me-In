@@ -7,6 +7,9 @@
 <br>
 <a href="/posts">Read post</a>
 <br>
+<h2>{{posts.0.title}}</h2>
+<p>{{posts.0.description}}</p>
+
 
 {{#if currentUser}}
 <form id="logout-form" action="/logout" method="POST">

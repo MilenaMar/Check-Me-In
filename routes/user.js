@@ -4,6 +4,8 @@ const Post = require('../models/Post.model');
 const shouldNotBeLoggedIn = require('../middlewares/shouldNotBeLoggedIn'); // user shouldn't be log in
 const isLoggedIn = require('../middlewares/isLoggedIn'); // user needs to be log in
 const bcrypt = require('bcryptjs');
+const upload = require('../config/cloudinary.config');
+
 
 
 ////// User Profile//////////////////////
@@ -14,21 +16,22 @@ router.get('/profile',isLoggedIn,(req,res)=>{
     res.render("user/profile", {currentUser: myUser });
   });
 });
+
+
+
+
 /////// User Settings - Update  details, Profile Picture and Password////////////
 router.get('/settings',isLoggedIn,(req,res)=> { 
 res.render('user/settings',{ currentUser: req.session.user })})
+   //------------- update general settings -------------//
 
-//----------- Update Profile-------------------------------///
-router.get('/settings',isLoggedIn,(req,res)=> { 
-  res.render('user/settings',{ currentUser: req.session.user })})
-  
-router.post('/settings', (req, res) => {
+router.post('/general-settings', (req, res) => {
   const { username, email, about,location } = req.body;
   User.findByIdAndUpdate(req.session.user._id, { username, email, about,location }, { new: true })
     .then((currentUser) => {
       req.session.user = currentUser;
-      res.render('user/settings', { updateMessage:"Settings updated"})})
-    .catch(() =>res.redirect('user/settings',{errorMessage:"there was and error updating your profile"}));
+      res.redirect( '/user/profile')})
+    .catch(() =>res.render('user/settings',{errorMessage:"there was and error updating your profile"}));
 });
 
 //-----------------UpdatePassword-------------------------------///
@@ -42,9 +45,8 @@ router.post("/updatePassword", (req, res) => {
     oldPassword,
     req.session.user.password
   );
-
   if (!isSamePassword) {
-  res.render('user/settings',{errorMessage:'Please try again  your old password'})
+  res.render('user/settings',{errorMessageP:'Please try again  your old password'})
   }
   const hash = bcrypt.genSaltSync(10);
   const hashedPassword = bcrypt.hashSync(newPassword, hash);
@@ -55,10 +57,48 @@ router.post("/updatePassword", (req, res) => {
   ).then((currentUser) => {
     req.session.user = currentUser;
     res.render("user/settings", {
-      updateMessageP: "Your Password has being update",
+      updateMessageP: "Your Password has being updated",
     });
   });
 });
+
+
+// ----------------------- Update Profile Picture --------------------//
+
+router.post('/upload-profile-picture',upload.single("Picture"), (req,res, next)=>{
+console.log(req.file.path)
+User.findByIdAndUpdate(req.session.user._id, {Picture:req.file.path}, { new: true })
+.then((currentUser)=> {
+req.session.user = currentUser;
+res.redirect('/user/profile')})
+.catch(() =>res.render('user/profile',{errorMessagepic:"there was and error updating your picture"}));
+} )
+
+//-------------------- Delete Account -----------------------------------------//
+router.get('/delete-account',isLoggedIn,(req,res)=> { 
+  res.render('user/delete-account',{ currentUser: req.session.user })})
+
+
+router.post('/delete-account', isLoggedIn,(req,res)=> {
+  const {password } = req.body;
+  const correctPassword = bcrypt.compareSync(password,req.session.user.password);
+  if (!correctPassword) {
+  res.render('user/delete-account',{errorMessageP:'Wrong password please try again'})
+  return;
+  }
+  User.findByIdAndDelete(req.session.user._id)
+    .then(() => {
+      req.session.destroy(err => {
+        if (err) {
+          return res.status(500).render('user/delete-account', { errorMessageP: err.message });
+        }
+        res.redirect('/');
+      });
+    })
+    .catch(err => console.error('Error deleting the User', err));
+})
+
+
 
 
 ///// Routes for the Post Model/////////////////////////////////////
@@ -66,8 +106,9 @@ router.get('/newpost',isLoggedIn,(req,res)=> {
 res.render('user/new-post',{ currentUser: req.session.user })})
 
 
-router.post("/newpost",isLoggedIn, (req, res) => {
-  const { country,city,budget,currency,days,when,title,description, body } = req.body;
+router.post("/newpost",isLoggedIn,upload.single("image"), (req, res) => {
+  const { country,city,budget,currency,days,when,title, description, body } = req.body;
+  const image=req.file.path
   Post.create({
     type: "text",
     country,
@@ -77,6 +118,7 @@ router.post("/newpost",isLoggedIn, (req, res) => {
     days,
     when,
     title,
+    image,
     description,
     body,
     author: req.session.user._id,})
@@ -94,7 +136,6 @@ router.post("/newpost",isLoggedIn, (req, res) => {
     });
   });
 });
-
 
 
 

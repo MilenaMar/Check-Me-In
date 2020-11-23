@@ -1,23 +1,21 @@
 const router = require('express').Router();
-
-// ? Package to will handle encryption of password
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
-
-// How many rounds should bcrypt run the salt (default [10 - 12 rounds])
 const saltRounds = 10;
-
-// Requiring the User model in order to interact with the database
 const User = require('../models/User.model');
 
 // Requiring necessary middlewares in order to control access to specific routes
 const shouldNotBeLoggedIn = require('../middlewares/shouldNotBeLoggedIn');
 const isLoggedIn = require('../middlewares/isLoggedIn');
 
+///// Sign UP get and post Routes///////////////////////////
+
 router.get('/signup', shouldNotBeLoggedIn, (req, res) => {
   res.render('auth/signup');
 });
 
+
+//-------------------  post() method  -------------------//
 router.post('/signup', shouldNotBeLoggedIn, (req, res) => {
   const { username, email, password } = req.body;
   if (!username || !email || !password) {
@@ -61,10 +59,16 @@ router.post('/signup', shouldNotBeLoggedIn, (req, res) => {
   });
 });
 
+
+
+/////////////// Log in  get and post Routes///////////////////////////
+
+
 router.get('/login', shouldNotBeLoggedIn, (req, res) => {
   res.render('auth/login');
 });
 
+//---------------- post () method -------------------------//
 router.post('/login',shouldNotBeLoggedIn, (req, res, next) => {
   const { email, password } = req.body;
   if (email === '' || password === '') {
@@ -87,6 +91,9 @@ router.post('/login',shouldNotBeLoggedIn, (req, res, next) => {
     })
     .catch(error => next(error));
 });
+
+
+/////////////// Log out Post Route///////////////////////////
 
 router.post('/logout', isLoggedIn, (req, res) => {
   req.session.destroy(err => {
