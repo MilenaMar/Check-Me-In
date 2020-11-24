@@ -1,6 +1,5 @@
 const url ="https://restcountries.eu/rest/v2/all"
 
-
 function updateCountry(response) {
 const countries =[];
 for (let i =0 ; i<response.data.length;i++){
@@ -21,5 +20,7 @@ const select = document.createElement("select");
 } 
 
 axios.get(url).then(updateCountry).catch(err => console.log ("not cities", err))
+
+
 
 

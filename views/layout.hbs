@@ -11,14 +11,37 @@
    <link href="https://fonts.googleapis.com/css2?family=Castoro&display=swap" rel="stylesheet">
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/ee493ec9f0.js" crossorigin="anonymous"></script>
    <link rel="stylesheet" href={{style}} />
 </head>
+<style>
+   footer {
+      height: 5%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+   }
+
+   footer i {
+      color: black;
+      font-size: 30px;
+   }
+
+   footer a {
+      color: #ec6e4c;
+   }
+</style>
 
 <body>
 
    {{{body}}}
 
-   <script src="/javascripts/script.js"></script>
+   <footer>
+      <i class="fab fa-github"></i>
+      <a href="https://github.com/MilenaMar/Check-Me-In" target="_blank">
+         Open-source code by Milena Martinez</a>
+   </footer>
+   <script src={{scrypt}}></script>
 </body>
 
 </html>

@@ -23,7 +23,7 @@ router.get('/profile',isLoggedIn,(req,res)=>{
 
 /////// User Settings - Update  details, Profile Picture and Password////////////
 router.get('/settings',isLoggedIn,(req,res)=> { 
-  const style = "/stylesheets/style.css"
+  const style = "/stylesheets/forms.css"
 res.render('user/settings',{ currentUser: req.session.user,style })})
    //------------- update general settings -------------//
 
@@ -78,7 +78,7 @@ res.redirect('/user/profile')})
 
 //-------------------- Delete Account -----------------------------------------//
 router.get('/delete-account',isLoggedIn,(req,res)=> { 
-  const style = "/stylesheets/style.css"
+  const style = "/stylesheets/forms.css"
   res.render('user/delete-account',{ currentUser: req.session.user, style})})
 
 
@@ -106,8 +106,9 @@ router.post('/delete-account', isLoggedIn,(req,res)=> {
 
 ///// Routes for the Post Model/////////////////////////////////////
 router.get('/newpost',isLoggedIn,(req,res)=> { 
-  const style = "/stylesheets/style.css"
-res.render('user/new-post',{ currentUser: req.session.user,style })})
+  const style = "/stylesheets/forms.css"
+  const scrypt = "/javascripts/script.js"
+res.render('user/new-post',{ currentUser: req.session.user,style,scrypt })})
 
 
 router.post("/newpost",isLoggedIn,upload.single("image"), (req, res) => {
@@ -146,7 +147,7 @@ router.post("/newpost",isLoggedIn,upload.single("image"), (req, res) => {
 router.get('/readmore/:slug',isLoggedIn, (req,res)=>{
   const style = "/stylesheets/style.css"
   Post.findOne({slug:req.params.slug})
-  .then((post) => res.render('user/read-more', {post,style}))
+  .then((post) => res.render('user/read-more', {post:post,style}))
   .catch(err => console.log(err))
   });
 

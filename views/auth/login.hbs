@@ -1,13 +1,24 @@
-<form action="/login" method="POST">
-   <label for="email">email</label>
-   <input type="text" id="email" name="email">
-   <label for="password">password</label>
-   <input type="password" id="password" name="password">
+<div class="header">
+   <div class="logo">
+      <a href="/"><img src="../images/logo.png" alt="Logo check me in "></a>
+   </div>
+   <div class="navigation">
+      <a href="/signup">Signup</a>
+   </div>
+</div>
+<div class="form-input">
+   <form action="/login" method="POST">
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+      <button type="submit">Submit</button>
+   </form>
+</div>
 
-   <button type="submit">Submit</button>
-</form>
+<a href="/" class="go-back">Go back</a>
 
-<a href="/">Go back</a>
+
 {{#if errorMessage}}
-<p>{{errorMessage}}</p>
+<p class="error">{{errorMessage}}</p>
 {{/if}}

@@ -1,0 +1,120 @@
+body {
+  height: 100vh;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Noto Sans JP", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-family: "Castoro", serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.logo img {
+  max-width: 200px;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
+}
+.navigation a {
+  padding: 10px;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.navigation button {
+  background-color: #ec6e4c;
+  color: white;
+  font-size: 1.2rem;
+  border: solid #ec6e4c;
+  border-radius: 0.5rem;
+}
+
+.navigation:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+}
+.form-input {
+  max-width: 1100px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  background-color: #d8ead0;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  margin-bottom: 10px;
+  width: 300px;
+  border: solid #ec6e4c;
+  padding: 5px;
+  height: 20px;
+  border-radius: 0.5rem;
+  outline: none;
+  color: black;
+}
+label {
+  font-size: 1.5rem;
+}
+button {
+  margin-top: 10px;
+  background-color: #ec6e4c;
+  color: white;
+  font-size: 1.2rem;
+  border: solid #ec6e4c;
+  border-radius: 0.5rem;
+}
+
+.go-back {
+  margin-top: 20px;
+  margin-left: 10px;
+  background-color: #ec6e4c;
+  color: white;
+  font-size: 1.2rem;
+  border: solid #ec6e4c;
+  border-radius: 0.5rem;
+}
+
+.error {
+  background: #a6a6a4;
+  padding: 10px;
+  color: white;
+  position: absolute;
+  left: 680px;
+  bottom: 160px;
+  border-radius: 0.5rem;
+  box-shadow: 6px 9px 5px #625261;
+  margin-top: 10px;
+}

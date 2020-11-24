@@ -8,10 +8,11 @@ const { post } = require('./auth');
 /* GET home page */
 router.get('/',(req, res, next) => {
   const style = "/stylesheets/index.css"
+  const scrypt = "/javascripts/date-time.js"
   Post.find()
   .sort({createdAt:'desc'})
   .populate('author')
-  .then((post)=>res.render('index',{ currentUser: req.session.user, posts:post, style }))
+  .then((post)=>res.render('index',{ currentUser: req.session.user, posts:post, style ,scrypt }))
   .catch(err => console.log(err))
 });
 
