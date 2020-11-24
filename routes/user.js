@@ -10,10 +10,11 @@ const upload = require('../config/cloudinary.config');
 
 ////// User Profile//////////////////////
 router.get('/profile',isLoggedIn,(req,res)=>{
+  const style = "/stylesheets/style.css"
   User.findById(req.session.user._id)
   .populate("posts")
   .then((myUser) => {
-    res.render("user/profile", {currentUser: myUser });
+    res.render("user/profile", {currentUser: myUser,style });
   });
 });
 
@@ -22,7 +23,8 @@ router.get('/profile',isLoggedIn,(req,res)=>{
 
 /////// User Settings - Update  details, Profile Picture and Password////////////
 router.get('/settings',isLoggedIn,(req,res)=> { 
-res.render('user/settings',{ currentUser: req.session.user })})
+  const style = "/stylesheets/style.css"
+res.render('user/settings',{ currentUser: req.session.user,style })})
    //------------- update general settings -------------//
 
 router.post('/general-settings', (req, res) => {
@@ -76,7 +78,8 @@ res.redirect('/user/profile')})
 
 //-------------------- Delete Account -----------------------------------------//
 router.get('/delete-account',isLoggedIn,(req,res)=> { 
-  res.render('user/delete-account',{ currentUser: req.session.user })})
+  const style = "/stylesheets/style.css"
+  res.render('user/delete-account',{ currentUser: req.session.user, style})})
 
 
 router.post('/delete-account', isLoggedIn,(req,res)=> {
@@ -103,7 +106,8 @@ router.post('/delete-account', isLoggedIn,(req,res)=> {
 
 ///// Routes for the Post Model/////////////////////////////////////
 router.get('/newpost',isLoggedIn,(req,res)=> { 
-res.render('user/new-post',{ currentUser: req.session.user })})
+  const style = "/stylesheets/style.css"
+res.render('user/new-post',{ currentUser: req.session.user,style })})
 
 
 router.post("/newpost",isLoggedIn,upload.single("image"), (req, res) => {
@@ -140,8 +144,9 @@ router.post("/newpost",isLoggedIn,upload.single("image"), (req, res) => {
 
 
 router.get('/readmore/:slug',isLoggedIn, (req,res)=>{
+  const style = "/stylesheets/style.css"
   Post.findOne({slug:req.params.slug})
-  .then((post) => res.render('user/read-more', post))
+  .then((post) => res.render('user/read-more', {post,style}))
   .catch(err => console.log(err))
   });
 

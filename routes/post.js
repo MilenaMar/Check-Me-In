@@ -7,19 +7,28 @@ const User = require('../models/User.model');
 const upload = require('../config/cloudinary.config');
 
 router.get('/edit/:id',isLoggedIn,(req,res)=> {
+const style = "/stylesheets/style.css"
 Post.findById(req.params.id)
-.then ((post)=> res.render('post/edit-post',post))
+.then ((post)=> res.render('post/edit-post',{post:post,style}))
 .catch((err)=>console.log(err))
 })
 
-router.post('/edit/:id',isLoggedIn,upload.single("image"), (req, res) => {
+router.post('/edit/:id',isLoggedIn, (req, res) => {
   const { id } = req.params;
-  const { country,city,budget,currency,days,when,title,description, body } = req.body;
-  const image = req.file.path
-  Post.findByIdAndUpdate(id, { country,city,budget,currency,days,when,title,image, description, body }, { new: true })
+  const {city,budget,currency,days,when,title,description, body } = req.body;
+  Post.findByIdAndUpdate(id, { 
+    city,
+    budget,
+    currency,
+    days,
+    when,
+    title,
+    description,
+    body}, { new: true })
     .then(() => {
       res.redirect('/user/profile')})
-    .catch(() =>res.redirect('/user/profile',{errorMessage:"there was and error updating your post"}));
+    .catch((err) =>{console.log(err,"there was and error updating your post"), 
+  res.render('user/profile')});
 });
 
 

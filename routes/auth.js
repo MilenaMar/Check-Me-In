@@ -11,7 +11,8 @@ const isLoggedIn = require('../middlewares/isLoggedIn');
 ///// Sign UP get and post Routes///////////////////////////
 
 router.get('/signup', shouldNotBeLoggedIn, (req, res) => {
-  res.render('auth/signup');
+  const style = "/stylesheets/style.css"
+  res.render('auth/signup',{style});
 });
 
 
@@ -65,7 +66,8 @@ router.post('/signup', shouldNotBeLoggedIn, (req, res) => {
 
 
 router.get('/login', shouldNotBeLoggedIn, (req, res) => {
-  res.render('auth/login');
+  const style = "/stylesheets/index.css"
+  res.render('auth/login', {style});
 });
 
 //---------------- post () method -------------------------//

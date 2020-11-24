@@ -7,17 +7,20 @@ const { post } = require('./auth');
 
 /* GET home page */
 router.get('/',(req, res, next) => {
+  const style = "/stylesheets/index.css"
   Post.find()
   .sort({createdAt:'desc'})
   .populate('author')
-  .then((post)=>res.render('index',{ currentUser: req.session.user, posts:post }))
+  .then((post)=>res.render('index',{ currentUser: req.session.user, posts:post, style }))
+  .catch(err => console.log(err))
 });
 
 
 router.get('/posts', (req, res) => {
+const style = "/stylesheets/index.css"
  Post.find().sort({createdAt:'desc'})
  .populate('author')
- .then(allPost =>  res.render('posts',{post:allPost}))
+ .then(allPost =>  res.render('posts',{post:allPost, style}))
  .catch(err => console.log(err))})
 
 

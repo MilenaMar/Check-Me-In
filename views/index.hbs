@@ -1,19 +1,39 @@
-<h1>Check-Me In !</h1>
-<p>Welcome to Check-Me In </p>
+<div class="header">
+  <div class="logo">
+    <a href="/"><img src="../images/logo.png" alt="Logo check me in "></a>
+  </div>
+  <div class="navigation">
+    <a href="/signup">Signup</a>
+    <a href="/login">Login</a>
+    {{#if currentUser}}
+    <a href="/user/profile">My profile</a>
+    <form id="logout-form" action="/logout" method="POST">
+      <button>Logout</button>
+    </form>
+    {{/if}}
+  </div>
 
-<a href="/signup">signup</a>
-<br>
-<a href="/login">login</a>
-<br>
-<a href="/posts">Read post</a>
-<br>
-<h2>{{posts.0.title}}</h2>
-<p>{{posts.0.description}}</p>
+</div>
+<div class="index-body">
+  <div class="welcome">
+    <h3>Who we are ?</h3>
+    <p>Check-Me In is A comunity-blog where people can share their experiences traveling around the globe
+      No Rules! Be Nice to others, share your experience let us know what you think about the places you visited and
+      enjoy a daily trip reading about the amazing experiences that others like you had while visting new places.
+    </p>
+    <div class="join">
+      <p> Sign Up today, be part of our comunity and discover a world of amazing histories. <br>
+        Is everything about learning and discover <a href="/signup">Signup</a> </p>
+    </div>
+  </div>
 
+  <div class="featured">
+    <h1>{{posts.0.title}}</h1>
+    <h3>{{posts.0.description}}</h3>
+    <p>{{posts.0.body}}</p>
+    <img src={{posts.0.image}} alt={{posts.0.city}}>
+    <a href="/posts">Read post</a>
+  </div>
+</div>
 
-{{#if currentUser}}
-<form id="logout-form" action="/logout" method="POST">
-  <button>Logout</button>
-</form>
-<a href="/user/profile">My profile</a>
-{{/if}}
+{{index.css.map}}
