@@ -1,13 +1,22 @@
+<div class="header">
+  <div class="logo">
+    <a href="/"><img src="../images/logo.png" alt="Logo check me in "></a>
+  </div>
+  <div class="navigation">
+    <form id="logout-form" action="/logout" method="POST">
+      <button>Logout</button>
+    </form>
+  </div>
+</div>
 <h1>Are you sure you want to leave Us? </h1>
-
-<a href="/user/settings"><button>I change My mind I will stay </button></a>
-<br>
-<form id="delete" action="/user/delete-account" method="POST">
-  <label for="password">Account password:</label>
-  <input type="password" id="password" name="password">
-  <button>Yes Im sure ! Delete my Acount </button>
-</form>
-
-{{#if errorMessageP}}
-{{errorMessageP}}
-{{/if}}
+<div>
+  <form id="delete" action="/user/delete-account" method="POST">
+    <label for="password">Account password:</label>
+    <input type="password" id="password" name="password">
+    <button>Yes I am sure ! Delete my Account </button>
+  </form>
+  <a href="/user/settings"><button class="stay">I change my mind I will stay go back</button></a>
+  {{#if errorMessageP}}
+  <span class="errorD">{{errorMessageP}}</span>
+  {{/if}}
+</div>

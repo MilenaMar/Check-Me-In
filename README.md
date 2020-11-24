@@ -4,7 +4,7 @@
 
 A comunity-blog where people can share their experiences traveling around the globe
 No Rules! Be Nice to others, share your experience let us know what you think about the places you visited and enjoy a daily trip reading about the amazing experiences that others like you had while visting new places.
-Is everything about learning and discover
+Is everything about learn and discover
 
 ## Trello
 

@@ -23,32 +23,34 @@ router.get('/profile',isLoggedIn,(req,res)=>{
 
 /////// User Settings - Update  details, Profile Picture and Password////////////
 router.get('/settings',isLoggedIn,(req,res)=> { 
-  const style = "/stylesheets/forms.css"
+  const style = "/stylesheets/settings.css"
 res.render('user/settings',{ currentUser: req.session.user,style })})
    //------------- update general settings -------------//
 
 router.post('/general-settings', (req, res) => {
   const { username, email, about,location } = req.body;
+  const style = "/stylesheets/settings.css"
   User.findByIdAndUpdate(req.session.user._id, { username, email, about,location }, { new: true })
     .then((currentUser) => {
       req.session.user = currentUser;
       res.redirect( '/user/profile')})
-    .catch(() =>res.render('user/settings',{errorMessage:"there was and error updating your profile"}));
+    .catch(() =>res.render('user/settings',{errorMessage:"there was and error updating your profile",style}));
 });
 
 //-----------------UpdatePassword-------------------------------///
 
 router.post("/updatePassword", (req, res) => {
   const { oldPassword, newPassword, repeatPassword } = req.body;
+  const style = "/stylesheets/settings.css"
   if (newPassword !== repeatPassword) {
-    res.render('user/settings',{errorMessage:'Your new passowrd and confirmation do not match please try again'})
+    res.render('user/settings',{errorMessage:'Your new passowrd and confirmation do not match please try again',style})
   }
   const isSamePassword = bcrypt.compareSync(
     oldPassword,
     req.session.user.password
   );
   if (!isSamePassword) {
-  res.render('user/settings',{errorMessageP:'Please try again  your old password'})
+  res.render('user/settings',{errorMessageP:'Please try again  your old password',style})
   }
   const hash = bcrypt.genSaltSync(10);
   const hashedPassword = bcrypt.hashSync(newPassword, hash);
@@ -59,7 +61,7 @@ router.post("/updatePassword", (req, res) => {
   ).then((currentUser) => {
     req.session.user = currentUser;
     res.render("user/settings", {
-      updateMessageP: "Your Password has being updated",
+      updateMessageP: "Your Password has being updated",style
     });
   });
 });
@@ -78,22 +80,24 @@ res.redirect('/user/profile')})
 
 //-------------------- Delete Account -----------------------------------------//
 router.get('/delete-account',isLoggedIn,(req,res)=> { 
-  const style = "/stylesheets/forms.css"
+  const style = "/stylesheets/settings.css"
   res.render('user/delete-account',{ currentUser: req.session.user, style})})
 
 
 router.post('/delete-account', isLoggedIn,(req,res)=> {
   const {password } = req.body;
+  const style = "/stylesheets/settings.css"
   const correctPassword = bcrypt.compareSync(password,req.session.user.password);
   if (!correctPassword) {
-  res.render('user/delete-account',{errorMessageP:'Wrong password please try again'})
+  res.render('user/delete-account',{errorMessageP:'Wrong password please try again',style})
   return;
   }
   User.findByIdAndDelete(req.session.user._id)
+  
     .then(() => {
       req.session.destroy(err => {
         if (err) {
-          return res.status(500).render('user/delete-account', { errorMessageP: err.message });
+          return res.status(500).render('user/delete-account', { errorMessageP: err.message, style });
         }
         res.redirect('/');
       });
