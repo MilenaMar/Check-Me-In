@@ -10,7 +10,7 @@ const upload = require('../config/cloudinary.config');
 
 ////// User Profile//////////////////////
 router.get('/profile',isLoggedIn,(req,res)=>{
-  const style = "/stylesheets/style.css"
+  const style = "/stylesheets/profile.css"
   User.findById(req.session.user._id)
   .populate("posts")
   .then((myUser) => {
@@ -70,12 +70,12 @@ router.post("/updatePassword", (req, res) => {
 // ----------------------- Update Profile Picture --------------------//
 
 router.post('/upload-profile-picture',upload.single("Picture"), (req,res, next)=>{
-console.log(req.file.path)
+const style = "/stylesheets/profile.css"
 User.findByIdAndUpdate(req.session.user._id, {Picture:req.file.path}, { new: true })
 .then((currentUser)=> {
 req.session.user = currentUser;
 res.redirect('/user/profile')})
-.catch(() =>res.render('user/profile',{errorMessagepic:"there was and error updating your picture"}));
+.catch(() =>res.render('user/profile',{errorMessagepic:"there was and error updating your picture",style}));
 } )
 
 //-------------------- Delete Account -----------------------------------------//

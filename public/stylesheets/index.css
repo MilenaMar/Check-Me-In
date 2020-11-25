@@ -97,7 +97,7 @@ button:hover {
 .current-city-information {
   line-height: 1px;
   height: 150px;
-  width: 150px;
+  width: 200px;
 }
 .search-weather {
   margin-top: 20px;
@@ -169,6 +169,7 @@ button:hover {
   color: black;
   width: auto;
   background-color: #ec6e4c;
+  margin-right: 5px;
   padding: 5px;
   font-size: 1.2;
   border-radius: 0.5rem;
