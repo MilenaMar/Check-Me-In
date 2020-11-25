@@ -1,11 +1,36 @@
-<h1>This is a Full Post</h1>
-{{post.description}}
-{{post.body}}
-
+<div class="header">
+  <div class="logo">
+  </div>
+  <div class="navigation">
+    <a href="/">Home page</a>
+    <a href="/user/profile">My profile</a>
+    <a href="/posts" class="go-back">Go Back</a>
+    <form id="logout-form" action="/logout" method="POST">
+      <button>Logout</button>
+    </form>
+  </div>
+</div>
 <form id="like" action="/like" method="POST">
   <button>Like</button>
 </form>
-
 <form id="like" action="/unlike" method="POST">
   <button>unlike</button>
 </form>
+<div class="trip-info">
+  <div>
+    <h1>{{post.title}}</h1>
+    <h2>by {{post.author.username}}</h2>
+    <h3>Country: {{post.country}}</h3>
+  </div>
+  <div>
+    <h5>Date of the trip: <span id="date">{{treatedDate}}</span></h5>
+    <h5>Cities visited: {{post.city}}</h5>
+    <h5>Budget: {{post.budget}} {{post.currency}}</h5>
+    <h5>{{post.days}} days</h5>
+  </div>
+</div>
+<h3>{{post.description}}</h3>
+<div class="post-body">
+  <p>{{post.body}}</p>
+  <img src={{post.image}} alt="trip image">
+</div>

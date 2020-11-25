@@ -1,9 +1,38 @@
-<h1>This is a galery with the latest post</h1>
+<div class="header">
+  <div class="logo">
+  </div>
+  <div class="navigation">
+    <a href="/">Home page</a>
+    <a href="/signup">Signup</a>
+    <a href="/login">Login</a>
+    {{#if currentUser}}
+    <a href="/user/profile">My profile</a>
+    <form id="logout-form" action="/logout" method="POST">
+      <button>Logout</button>
+    </form>
+    {{/if}}
+  </div>
+</div>
+<h1>Our Gallery</h1>
 
-<a href="/">Go back</a>
-
-{{#each post}}
-<h1>{{description}}</h1>
-<h2>{{username}}</h2>
-<a href="/user/readmore/{{slug}}">Read More</a>
-{{/each}}
+<p>Find a room with the latest posts from our comunity</p>
+<div class="galery">
+  {{#each post}}
+  <div class="allposts">
+    <div>
+      <div class="box1">
+        <h1>{{title}}</h1>
+        <h4> by {{author.username}}</h4>
+      </div>
+      <div class="box3">
+        <img class="profile-pic" src={{author.Picture}} alt="profile picture">
+      </div>
+    </div>
+    <div class="box2">
+      <h3>{{description}}</h3>
+      <p>{{body}}</p>
+      <a href="/user/readmore/{{slug}}">Read More</a>
+    </div>
+  </div>
+  {{/each}}
+</div>

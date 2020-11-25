@@ -18,7 +18,7 @@ router.get('/',(req, res, next) => {
 
 
 router.get('/posts', (req, res) => {
-const style = "/stylesheets/index.css"
+const style = "/stylesheets/readP.css"
  Post.find().sort({createdAt:'desc'})
  .populate('author')
  .then(allPost =>  res.render('posts',{post:allPost, style}))

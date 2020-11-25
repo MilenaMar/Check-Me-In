@@ -149,9 +149,12 @@ router.post("/newpost",isLoggedIn,upload.single("image"), (req, res) => {
 
 
 router.get('/readmore/:slug',isLoggedIn, (req,res)=>{
-  const style = "/stylesheets/style.css"
-  Post.findOne({slug:req.params.slug})
-  .then((post) => res.render('user/read-more', {post:post,style}))
+  const style = "/stylesheets/readP.css"
+  Post.findOne({slug:req.params.slug}) 
+  .populate('author')
+  .then((post) => {
+    const treatedDate = post.when.toString().slice(4,16);
+    res.render('user/read-more', {post:post,style,treatedDate})})
   .catch(err => console.log(err))
   });
 
