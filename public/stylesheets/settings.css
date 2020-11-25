@@ -16,20 +16,23 @@ h1 span {
   text-transform: capitalize;
 }
 .header {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-
 .logo {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
 }
-.logo img {
-  max-width: 200px;
-  margin-left: 30px;
-  margin-top: 20px;
+.logo a {
+  background-color: #ec6e4c;
+  color: white;
+  font-size: 1.2rem;
+  border: solid #ec6e4c;
+  border-radius: 0.5rem;
 }
 
 .navigation {
@@ -41,6 +44,7 @@ h1 span {
 .navigation button {
   background-color: #ec6e4c;
   color: white;
+  padding: 2px;
   font-size: 1.2rem;
   border: solid #ec6e4c;
   border-radius: 0.5rem;
@@ -55,8 +59,8 @@ button:hover {
 }
 
 .form-input {
-  margin-top: 30px;
-  margin-left: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 2rem;
   display: flex;
   align-items: center;
@@ -106,13 +110,6 @@ button {
 }
 
 .go-back {
-  margin-top: 20px;
-  margin-left: 10px;
-  background-color: #ec6e4c;
-  color: white;
-  font-size: 1.2rem;
-  border: solid #ec6e4c;
-  border-radius: 0.5rem;
 }
 
 .stay {

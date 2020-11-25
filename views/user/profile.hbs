@@ -10,7 +10,7 @@
     </form>
   </div>
 </div>
-<h1>{{currentUser.username}}</h1>
+<h1>Welcome to your profile <br>{{currentUser.username}}</h1>
 <h2>My Recent Posts</h2>
 <div class="profile-body">
   <div class="profile-picture">
@@ -24,18 +24,22 @@
     {{#if errorMessagepic}}
     <p>{{errorMessagepic}}</p>
     {{/if}}
-    <h3>About me</h3>
-    <p>{{currentUser.about}}</p>
-    <h3>Location</h3>
-    <p>{{currentUser.location}}</p>
+    <div class="bio">
+      <h3>Location</h3>
+      <p>{{currentUser.location}}</p>
+      <h3>About me</h3>
+      <p>{{currentUser.about}}</p>
+    </div>
   </div>
   {{#each currentUser.posts}}
   <div class="featured">
-    <h3>{{title}}</h3>
+    <h3>{{title}}</h3><br>
     <h4>{{country}}-{{city}}</h4>
-    <p>{{when}}</p>
+    <p class="date-trip"> Date of the trip:{{when}}</p>
     <h5>{{description}}</h5>
-    <a href="/post/edit/{{_id}}">Edit</a>
+    <div>
+      <a href="/post/edit/{{_id}}">Edit Post</a>
+    </div>
   </div>
   {{/each}}
 </div>

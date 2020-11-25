@@ -1,6 +1,7 @@
 body {
   height: 100vh;
   width: 100%;
+  margin: 0 auto;
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
@@ -14,6 +15,8 @@ h1 {
 }
 
 .header {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
@@ -60,6 +63,8 @@ button:hover {
 }
 
 .index-body {
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
   grid-template-rows: 1fr 3fr;
   grid-template-columns: 600px 1fr;
