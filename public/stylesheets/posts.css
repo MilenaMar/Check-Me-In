@@ -1,0 +1,139 @@
+body {
+  height: 100vh;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: "Noto Sans JP", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-family: "Castoro", serif;
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
+}
+.logo a {
+  background-color: #ec6e4c;
+  color: white;
+  font-size: 1.2rem;
+  border: solid #ec6e4c;
+  border-radius: 0.5rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
+}
+.navigation a {
+  padding: 10px;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.navigation button {
+  background-color: #ec6e4c;
+  color: white;
+  font-size: 1.2rem;
+  border: solid #ec6e4c;
+  border-radius: 0.5rem;
+}
+
+.navigation:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  width: auto;
+  border: solid #d8ead0;
+  padding: 5px;
+  height: 20px;
+  border-radius: 0.5rem;
+  outline: none;
+  color: black;
+}
+label {
+  font-size: 1rem;
+}
+button {
+  margin-top: 10px;
+  background-color: #ec6e4c;
+  color: white;
+  font-size: 1.2rem;
+  border: solid #ec6e4c;
+  border-radius: 0.5rem;
+}
+
+.go-back {
+  background-color: #ec6e4c;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+.error {
+  background: #a6a6a4;
+  padding: 10px;
+  color: white;
+  position: absolute;
+  left: 680px;
+  bottom: 160px;
+  border-radius: 0.5rem;
+  box-shadow: 6px 9px 5px #625261;
+  margin-top: 10px;
+}
+select {
+  border: solid #d8ead0;
+  border-radius: 0.5rem;
+}
+option {
+  margin-bottom: 10px;
+  width: 300px;
+  border: solid #ec6e4c;
+  padding: 5px;
+  height: 20px;
+  border-radius: 0.5rem;
+  outline: none;
+  color: black;
+}
+
+textarea {
+  margin-bottom: 10px;
+  border: solid #d8ead0;
+  padding: 5px;
+  border-radius: 0.5rem;
+  outline: none;
+  color: black;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+}
+
+#country-select,
+#currency-select {
+  background-color: #ec6e4c;
+  color: black;
+}

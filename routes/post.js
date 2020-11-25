@@ -7,7 +7,7 @@ const User = require('../models/User.model');
 const upload = require('../config/cloudinary.config');
 
 router.get('/edit/:id',isLoggedIn,(req,res)=> {
-const style = "/stylesheets/settings.css"
+const style = "/stylesheets/posts.css"
 Post.findById(req.params.id)
 .then ((post)=> res.render('post/edit-post',{post:post,style}))
 .catch((err)=>console.log(err))

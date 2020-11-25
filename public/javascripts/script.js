@@ -13,6 +13,7 @@ const select = document.createElement("select");
   for (const val of countries) {
     const option = document.createElement("option");
     option.value = val;
+    option.id = "country-select"
     option.text = val.charAt(0).toUpperCase() + val.slice(1);
     select.appendChild(option);
   }

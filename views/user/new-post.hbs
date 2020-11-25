@@ -1,35 +1,46 @@
-<h3>User can create a new post</h3>
-
+<div class="header">
+  <div class="logo">
+    <a href="/user/profile" class="go-back">Go Back</a>
+  </div>
+  <div class="navigation">
+    <a href="/">Home page</a>
+    <form id="logout-form" action="/logout" method="POST">
+      <button>Logout</button>
+    </form>
+  </div>
+</div>
+<h3>Are You ready to share a story!</h3>
+<p>Is all about the details, We want you to enjoy while writing about your experiences, and there is things that could
+  help our comunity and be inspired for their next trip <br> tell us for how long was your trip what you did and
+  <strong>Upload a picture </strong>so we all can get inspired by it
+</p>
+<h2>Check-Me In:</h2>
 <form action="/user/newpost" method="POST" enctype="multipart/form-data">
-  <p>Check-Me In:</p>
-  <label for="location-country" id="location-country">Country:</label>
-  <label for="location-city">City:</label>
-  <input type="text" id="location-city" name="city">
-  <br>
-  <label for="budget">Budget:</label>
-  <input type="text" id="budget" name="budget">
-  <label for="currency">Currency:</label>
-  <select id="currency" name="currency">
-    <option value="USD">USD</option>
-    <option value="EUR">EUR</option>
-  </select>
-  <label for="days">For how long was your trip:</label>
-  <input type="text" id="days" name="days" placeholder="days">
-  <br>
-  <label for="dates">Date:</label>
-  <input type="date" id="dates" name="when">
-  <label for="title">Title:</label>
+  <div>
+    <label for="location-country" id="location-country">Country: </label>
+    <label for="location-city">City: </label>
+    <input type="text" id="location-city" name="city">
+    <label for="budget">How much was your budget: </label>
+    <input type="text" id="budget" name="budget">
+    <label for="currency">Currency: </label>
+    <select id="currency" name="currency">
+      <option value="USD" id="currency-select">USD</option>
+      <option value="EUR" id="currency-select">EUR</option>
+    </select>
+  </div>
+  <div>
+    <label for="days">For how many days was your trip: </label>
+    <input type="text" id="days" name="days" placeholder="days">
+    <label for="dates">Date of your trip:</label>
+    <input type="date" id="dates" name="when">
+  </div>
+  <label for="title">Title of your story:</label>
   <input type="text" id="title" name="title">
-  <br>
-  <label for="description">Description:</label>
-  <br>
+  <label for="description"> Tell the comunity a brief insight from your trip</label>
   <textarea name="description" id="description" cols="50" rows="10"></textarea>
-  <br>
-  <label for="body">Body of the post</label>
-  <br>
+  <label for="body">Go on! tell us everything you can thing of, We love to hear your experience</label>
   <textarea name="body" id="body" cols="50" rows="20" placeholder="Tell Us about your experience"></textarea>
-  <br>
-  <label for="image">Upload some pictures about your trip:</label>
+  <label for="image">Upload a picture about your trip</label>
   <input type="file" name="image" id="image" accept="image/png, image/jpg">
   <button type="submit">Create your post</button>
 </form>

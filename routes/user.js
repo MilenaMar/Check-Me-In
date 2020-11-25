@@ -110,7 +110,7 @@ router.post('/delete-account', isLoggedIn,(req,res)=> {
 
 ///// Routes for the Post Model/////////////////////////////////////
 router.get('/newpost',isLoggedIn,(req,res)=> { 
-  const style = "/stylesheets/forms.css"
+  const style = "/stylesheets/posts.css"
   const scrypt = "/javascripts/script.js"
 res.render('user/new-post',{ currentUser: req.session.user,style,scrypt })})
 

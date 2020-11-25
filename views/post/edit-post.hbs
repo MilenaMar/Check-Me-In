@@ -1,33 +1,39 @@
-<h1>Here You can edit yout post</h1>
-
-<h2>{{post.country}}</h2>
-<p>Check-Me In:</p>
+<div class="header">
+  <div class="logo">
+    <a href="/user/profile" class="go-back">Go Back</a>
+  </div>
+  <div class="navigation">
+    <a href="/">Home page</a>
+    <form id="logout-form" action="/logout" method="POST">
+      <button>Logout</button>
+    </form>
+  </div>
+</div>
+<h2>Check-Me In: {{post.country}}</h2>
 <form action="/post/edit/{{post._id}}" method="POST">
-  <label for="location-city">City:</label>
-  <input type="text" id="location-city" name="city" value={{post.city}}>
-  <br>
-  <label for="budget">Budget:</label>
-  <input type="text" id="budget" name="budget" value={{post.budget}}>
-  <label for="currency">Currency:</label>
-  <select id="currency" name="currency">
-    <option value="USD">USD</option>
-    <option value="EUR">EUR</option>
-  </select>
-  <label for="days">For how long was your trip:</label>
-  <input type="text" id="days" name="days" placeholder="days" value={{post.days}}>
-  <br>
-  <label for="dates">Date:</label>
-  <input type="date" id="dates" name="when" value={{post.when}}>
+  <div>
+    <label for="location-city">City:</label>
+    <input type="text" id="location-city" name="city" value={{post.city}}>
+    <label for="budget">Budget:</label>
+    <input type="text" id="budget" name="budget" value={{post.budget}}>
+    <label for="currency">Currency:</label>
+    <select id="currency" name="currency">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+    </select>
+  </div>
+  <div>
+    <label for="days">For how long was your trip:</label>
+    <input type="text" id="days" name="days" placeholder="days" value={{post.days}}>
+    <label for="dates">Date:</label>
+    <input type="date" id="dates" name="when" value={{post.when}}>
+  </div>
   <label for="title">Title:</label>
   <input type="text" id="title" name="title" value={{post.title}}>
-  <br>
   <label for="description">Description:</label>
   <textarea name="description" id="description" cols="50" rows="10">{{post.description}}</textarea>
-  <br>
   <label for="body">Body of the post</label>
-  <br>
   <textarea name="body" id="body" cols="50" rows="20">{{post.body}}</textarea>
-  <br>
   <button type="submit">Submit Changes</button>
 </form>
 
