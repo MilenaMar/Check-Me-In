@@ -21,7 +21,7 @@ router.get('/posts', (req, res) => {
 const style = "/stylesheets/readP.css"
  Post.find().sort({createdAt:'desc'})
  .populate('author')
- .then(allPost =>  res.render('posts',{post:allPost, style}))
+ .then(allPost =>  res.render('posts',{post:allPost, style,currentUser: req.session.user}))
  .catch(err => console.log(err))})
 
 
