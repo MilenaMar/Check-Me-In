@@ -1,5 +1,40 @@
+body {
+  height: 100vh;
+  width: 100%;
+  padding: 0px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: "Noto Sans JP", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-family: "Castoro", serif;
+  padding: 10px;
+}
+
+p {
+  padding: 10px;
+}
+
 .header {
   margin: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
+}
+.navigation a {
+  padding: 10px;
+  color: black;
+  font-size: 1.2rem;
 }
 
 .navigation button {
@@ -10,6 +45,13 @@
   border-radius: 0.5rem;
 }
 
+.navigation:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+}
 .galery {
   display: flex;
   justify-content: space-evenly;
@@ -56,4 +98,78 @@ img {
   width: 500px;
   height: 350px;
   border-radius: 0.3rem;
+}
+
+footer {
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+footer i {
+  color: black;
+  font-size: 30px;
+}
+
+footer a {
+  color: #ec6e4c;
+}
+
+.navigation:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 200px) and (max-width: 480px) {
+  .galery {
+    flex-direction: column;
+  }
+  .box2 p {
+    max-height: 150px;
+    overflow: hidden;
+  }
+  .allposts {
+    max-height: 700px;
+    max-width: 400px;
+    display: flex;
+    padding: 10px 5px;
+    margin: 10px 5px;
+
+    align-items: center;
+  }
+  .profile-pic {
+    width: 150px;
+    height: 100px;
+  }
+
+  .box2 a {
+    margin-left: 50px;
+    background-color: #c5ddb9;
+    padding: 5px;
+    font-size: 1.2;
+    border-radius: 0.5rem;
+  }
+  .trip-info {
+    padding: 10px;
+  }
+  .post-body {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 7px;
+    margin-bottom: 80px;
+  }
+
+  img {
+    max-width: 345px;
+    height: 350px;
+    border-radius: 0.3rem;
+  }
+  h3 {
+    padding: 10px;
+  }
 }

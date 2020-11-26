@@ -78,9 +78,6 @@ button {
   border-radius: 0.5rem;
 }
 
-.go-back {
-}
-
 .stay {
   display: block;
   margin: 0 auto;
@@ -119,4 +116,36 @@ button {
   border-radius: 0.5rem;
   box-shadow: 6px 9px 5px #625261;
   margin-top: 10px;
+}
+
+@media (min-width: 200px) and (max-width: 480px) {
+  .form-input {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  form {
+    max-width: 250px;
+  }
+  .update-info,
+  .update-password {
+    margin-bottom: 20px;
+  }
+
+  input {
+    max-width: 250px;
+  }
+  textarea {
+    max-width: 250px;
+  }
+  #delete {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .form-input {
+    max-width: 500px;
+  }
 }

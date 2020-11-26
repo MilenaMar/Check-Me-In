@@ -92,3 +92,28 @@ button {
   flex-direction: column;
   line-height: 1px;
 }
+
+@media (min-width: 200px) and (max-width: 480px) {
+  .navigation {
+    text-align: center;
+  }
+  .profile-body {
+    flex-direction: column;
+  }
+  h1 {
+    padding: 10px;
+    margin-left: 0px;
+  }
+
+  .profile-picture {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .profile-picture img {
+    vertical-align: left;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+}
