@@ -1,4 +1,5 @@
-const apiKey = "a784c28c1c20f9576703dc8f10f56fa7"; 
+
+const apiKey = "a784c28c1c20f9576703dc8f10f56fa7" 
 
 const weekDays = [
   "Sunday",
@@ -84,7 +85,7 @@ function updateForecast(response) {
     let forecastDay = forecastInfo.getDay(); // days part from the timestamp
     let forecastWeekDay = weekDays[forecastDay]; // return the forecastDay day from weekDays array. 
     forecastElement.innerHTML += 
-                `<div>
+                `<div class="forecast-day">
                 ${forecastWeekDay}
                 <br />
                 <img src=${forecastIcon} alt="forecast">

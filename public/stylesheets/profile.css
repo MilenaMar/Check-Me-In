@@ -1,24 +1,5 @@
-body {
-  height: 100vh;
-  width: 100%;
-  padding: 0px;
-  margin: 0px;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  font-family: "Noto Sans JP", sans-serif;
-}
-a {
-  text-decoration: none;
-}
-h1 {
-  font-family: "Castoro", serif;
-}
-
 .header {
   margin: 30px;
-  display: flex;
-  justify-content: space-between;
 }
 
 img {
@@ -26,18 +7,6 @@ img {
   margin-left: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
-}
-
-.navigation {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-right: 10px;
-}
-.navigation a {
-  padding: 10px;
-  color: black;
-  font-size: 1.2rem;
 }
 
 .navigation button {
@@ -48,13 +17,6 @@ img {
   border-radius: 0.5rem;
 }
 
-.navigation:hover {
-  cursor: pointer;
-}
-
-button:hover {
-  cursor: pointer;
-}
 .profile-body {
   margin-left: 20px;
   display: flex;
