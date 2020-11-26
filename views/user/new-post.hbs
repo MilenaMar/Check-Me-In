@@ -17,11 +17,11 @@
 <h2>Check-Me In:</h2>
 <form action="/user/newpost" method="POST" enctype="multipart/form-data">
   <div>
-    <label for="location-country" id="location-country">Country: </label>
-    <label for="location-city">City: </label>
+    <label for="location-country" id="location-country">Country* </label>
+    <label for="location-city">Cities: </label>
     <input type="text" id="location-city" name="city">
     <label for="budget">How much was your budget: </label>
-    <input type="text" id="budget" name="budget">
+    <input type="text" id="budget" name="budget" placeholder="$ / € ">
     <label for="currency">Currency: </label>
     <select id="currency" name="currency">
       <option value="USD" id="currency-select">USD</option>
@@ -34,13 +34,13 @@
     <label for="dates">Date of your trip:</label>
     <input type="date" id="dates" name="when">
   </div>
-  <label for="title">Title of your story:</label>
+  <label for="title">Title of your story *</label>
   <input type="text" id="title" name="title">
   <label for="description"> Tell the comunity a brief insight from your trip</label>
   <textarea name="description" id="description" cols="50" rows="10"></textarea>
   <label for="body">Go on! tell us everything you can thing of, We love to hear your experience</label>
   <textarea name="body" id="body" cols="50" rows="20" placeholder="Tell Us about your experience"></textarea>
-  <label for="image">Upload a picture about your trip</label>
+  <label for="image">Upload a picture about your trip *</label>
   <input type="file" name="image" id="image" accept="image/png, image/jpg">
   <button type="submit">Create your post</button>
 </form>

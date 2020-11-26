@@ -14,7 +14,7 @@ router.get('/profile',isLoggedIn,(req,res)=>{
   User.findById(req.session.user._id)
   .populate("posts")
   .then((myUser) => {
-    res.render("user/profile", {currentUser: myUser,style });
+    res.render("user/profile", {currentUser: myUser,style});
   });
 });
 
@@ -117,7 +117,10 @@ res.render('user/new-post',{ currentUser: req.session.user,style,scrypt })})
 
 router.post("/newpost",isLoggedIn,upload.single("image"), (req, res) => {
   const { country,city,budget,currency,days,when,title, description, body } = req.body;
-  const image=req.file.path
+  let image = "https://res.cloudinary.com/dwttlckdr/image/upload/v1606406295/travel_q6liqk.jpg"
+  if(req.file){
+    image=req.file.path
+  }
   Post.create({
     type: "text",
     country,

@@ -3,7 +3,7 @@
   </div>
   <div class="navigation">
     <a href="/">Home page</a>
-    <a href="/user/newpost">Share a new story</a>
+    <a href="/user/newpost"> New story</a>
     <a href="/user/settings">Settings</a>
     <form id="logout-form" action="/logout" method="POST">
       <button>Logout</button>
@@ -35,7 +35,6 @@
   <div class="featured">
     <h3>{{title}}</h3><br>
     <h4>{{country}}-{{city}}</h4>
-    <p class="date-trip"> Date of the trip:{{when}}</p>
     <h5>{{description}}</h5>
     <div>
       <a href="/post/edit/{{_id}}">Edit Post</a>

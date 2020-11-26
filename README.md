@@ -85,3 +85,11 @@ https://trello.com/b/mQ4jWUj7/check-me-in-second-module-project
 - router.post('Post/edit/postId')
 - router.post('Post/deletePost/postId')
 - router.post('User/delete-account')
+
+## URL
+
+https://check-me-in.herokuapp.com/
+
+## Prezi presentation
+
+https://prezi.com/vvailoujfr60/check-me-in/?present=1
