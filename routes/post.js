@@ -3,6 +3,7 @@ const router  = express.Router();
 const isLoggedIn = require('../middlewares/isLoggedIn');
 const Post = require('../models/Post.model');
 const User = require('../models/User.model');
+const { post } = require('./user');
 
 router.get('/edit/:id',isLoggedIn,(req,res)=> {
 const style = "/stylesheets/posts.css"
@@ -47,6 +48,23 @@ router.post('/deletePost/:id', (req, res) => {
   });
 });
 
+
+//----------------------- Like a Post -----------------------//
+
+//router.post('/like/:id', (req, res, next) => {
+//    Post.findOneAndUpdate(
+//      { _id: req.params.id},{$inc: {likeCount: +1}, $push:{likes: req.session.user._id}},
+//      {new:true}) 
+//         .then((post)=>{ console.log(post),(res.redirect(`/user/readmore/${post.slug}`))})
+//});
+//
+//
+//router.post('/unlike/:id', (req, res, next) => {
+//  Post.findOneAndUpdate(
+//    { _id: req.params.id},{$inc: {likeCount: -1}, $pull:{likes: req.session.user._id}},
+//    {new:true}) 
+//       .then((post)=>{ console.log(post),(res.redirect(`/user/readmore/${post.slug}`))})
+//  });
 
 
 module.exports = router;
