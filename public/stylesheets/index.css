@@ -154,14 +154,9 @@
     max-width: 100%;
     margin-left: 2px;
   }
-  .about-us span {
-    color: #ec6e4c;
-    font-size: 1.2rem;
-  }
+
   .join {
     max-width: 100%;
-    color: black;
-    border-radius: 0.5rem;
     margin-right: 0;
   }
   .search-weather {
@@ -197,35 +192,11 @@
     padding-left: 20px;
     line-height: 25px;
   }
-  .box2 {
-    float: left;
-    margin: 15px;
-  }
-  .box1 h3 {
-    text-align: right;
-    opacity: 0.45;
-  }
   .box2 img {
     max-width: 200px;
   }
-  .box3 {
-    margin-right: 10px;
-  }
   .featured p {
     display: none;
-  }
-  .featured a {
-    color: black;
-    background-color: #c5ddb9;
-    font-size: 1.2;
-    border-radius: 0.5rem;
-  }
-  .readme {
-    color: black;
-    width: auto;
-    background-color: #ec6e4c;
-    font-size: 1.2;
-    border-radius: 0.5rem;
   }
 }
 
@@ -233,67 +204,30 @@
   body {
     height: 100vh;
   }
-
   .index-body {
     padding: 10px;
-    display: grid;
     grid-template-rows: 30% 70%;
     grid-template-columns: 1fr 1fr;
     display: flex;
     flex-direction: column;
   }
-
   .welcome {
     grid-row: 100%;
-    display: flex;
     padding: 20px;
-    justify-content: space-between;
-    background-color: #c5ddb9;
   }
-
   .about-us {
     padding: 10px;
-    color: black;
-    border-radius: 0.5rem;
   }
-  .about-us span {
-    color: #ec6e4c;
-    font-size: 1.2rem;
-  }
-
   .join {
     padding: 10px;
-    color: black;
-    border-radius: 0.5rem;
   }
-  .join-us {
-    color: #ec6e4c;
-    font-size: 1.2rem;
-  }
-
   .search-weather {
     grid-row: 100%;
     padding: 10px;
   }
-  .weather-description {
-    padding-left: 11px;
-  }
-
-  #form {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-
   .current-city-information {
-    text-align: center;
     max-height: 210px;
   }
-  .forecasted {
-    display: flex;
-    justify-content: center;
-  }
-
   .featured {
     grid-row: 100%;
     padding: 10px;

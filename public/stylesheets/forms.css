@@ -57,3 +57,35 @@ button {
   box-shadow: 6px 9px 5px #625261;
   margin-top: 10px;
 }
+
+@media (min-width: 200px) and (max-width: 480px) {
+  .logo img {
+    max-width: 180px;
+    margin-left: 5px;
+  }
+  .navigation {
+    margin-right: 0;
+  }
+  .navigation a {
+    padding: 5px;
+  }
+
+  .form-input {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .logo img {
+    max-width: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .navigation {
+    margin: 20px;
+  }
+
+  .form-input {
+    max-width: 500px;
+  }
+}
