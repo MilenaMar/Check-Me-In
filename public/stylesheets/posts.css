@@ -1,3 +1,27 @@
+body {
+  height: 100vh;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: "Noto Sans JP", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-family: "Castoro", serif;
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
 .logo {
   display: flex;
   justify-content: space-around;
@@ -12,12 +36,32 @@
   border-radius: 0.5rem;
 }
 
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
+}
+.navigation a {
+  padding: 10px;
+  color: black;
+  font-size: 1.2rem;
+}
+
 .navigation button {
   background-color: #ec6e4c;
   color: white;
   font-size: 1.2rem;
   border: solid #ec6e4c;
   border-radius: 0.5rem;
+}
+
+.navigation:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 form {
@@ -32,7 +76,6 @@ input {
   border-radius: 0.5rem;
   outline: none;
   color: black;
-  text-transform: capitalize;
 }
 label {
   font-size: 1rem;
@@ -87,11 +130,34 @@ textarea {
   color: black;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 1rem;
-  text-transform: capitalize;
 }
 
 #country-select,
 #currency-select {
   background-color: #ec6e4c;
   color: black;
+}
+
+footer {
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+footer i {
+  color: black;
+  font-size: 30px;
+}
+
+footer a {
+  color: #ec6e4c;
+}
+
+.navigation:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
 }
