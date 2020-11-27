@@ -2,8 +2,8 @@
 
 ## Description
 
-A comunity-blog where people can share their experiences traveling around the globe
-No Rules! Be Nice to others, share your experience let us know what you think about the places you visited and enjoy a daily trip reading about the amazing experiences that others like you had while visting new places.
+A community-blog where people can share their experiences traveling around the globe
+No Rules! Be Nice to others, share your experience let us know what you think about the places you visited and enjoy a daily trip reading about the amazing experiences that others like you had while visiting new places.
 Is everything about learn and discover
 
 ## Trello
@@ -14,14 +14,14 @@ https://trello.com/b/mQ4jWUj7/check-me-in-second-module-project
 
 ###### Must
 
-• Home Page - Any user can have acces to the home page
-• Sign Up Page - Any user can acces and fill out the sign up form /page
-• Login in Page - Any user can acces the Login form/page only register user can fill out the form
-• User-Profile Page - Logged in User Only, only relevant to the user logged in
-• Update Profile Page - Logged in User Only, only relevant to the user logged in
-• Make a Post- Page - Logged in User Only, It will displat the pot in his profile and in the gallery
-• Gallery of Post Page - Any User can acces the galery
-• Read Full Post Page - Logged in User Only can acces to the Full post from the gallery
+• Home Page : Any user can have access to the home page
+• Sign Up Page : Any user can acces and fill out the sign up form /page
+• Login in Page : Any user can acces the Login form/page only register user can fill out the form
+• User-Profile Page : Logged in User Only, only relevant to the user logged in
+• Update Profile Page : Logged in User Only, only relevant to the user logged in
+• Make a Post- Page : Logged in User Only, It will displat the pot in his profile and in the gallery
+• Gallery of Post Page : Any User can access the gallery
+• Read Full Post Page : Logged in User Only can acces to the Full post from the gallery
 
 ###### Wish List
 
@@ -42,7 +42,7 @@ https://trello.com/b/mQ4jWUj7/check-me-in-second-module-project
 
 • Post Model
 
-- Country: String, requeried
+- Country: String, required
 - City:String
 - Budget:Number
 - Currency: String can have only two values USD or EUR
