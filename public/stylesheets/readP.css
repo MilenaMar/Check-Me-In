@@ -54,6 +54,7 @@ button:hover {
 }
 .galery {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 .allposts {
@@ -130,6 +131,7 @@ button:hover {
   }
   .box2 p {
     max-height: 150px;
+    max-width: 238px;
     overflow: hidden;
   }
   .allposts {
