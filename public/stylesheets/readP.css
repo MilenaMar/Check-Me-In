@@ -134,6 +134,10 @@ button:hover {
     max-width: 238px;
     overflow: hidden;
   }
+  .box2 h3 {
+    max-height: 125;
+    overflow: hidden;
+  }
   .allposts {
     max-height: 700px;
     max-width: 400px;
