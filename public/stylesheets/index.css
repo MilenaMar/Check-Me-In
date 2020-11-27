@@ -105,6 +105,11 @@
 .box3 {
   margin-right: 10px;
 }
+
+.box3 h3 {
+  max-height: 208px;
+  overflow: hidden;
+}
 .featured p {
   max-height: 150px;
   overflow: hidden;
