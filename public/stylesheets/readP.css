@@ -135,7 +135,7 @@ button:hover {
     overflow: hidden;
   }
   .box2 h3 {
-    max-height: 125;
+    max-height: 125px;
     overflow: hidden;
   }
   .allposts {
