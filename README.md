@@ -1,4 +1,6 @@
 # Check-Me In
+Full stack JavaScript application built using Express, Mongoose, MongoDB and  Handlebars,  MongoDB Atlas 
+SaaS technology,  Cloudinary. 
 
 ## Description
 
