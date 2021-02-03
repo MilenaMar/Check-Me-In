@@ -3,25 +3,41 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #F1F5F6;
+  background-color: #F1F5F6; 
+  
 }
 
 body {
-  margin: 25px;
+  margin: 0;
+  padding: 0;
 }
-
 
 h1, h2, h3, h4, h5, h6{
   font-family: 'Proza Libre', sans-serif;
-  font-size: 1.5rem
 }
 
 p, a {
   font-family: 'Karla', sans-serif;
   font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
 }
 
+.body-container{
+  min-height: calc(100vh - 40px);
+  margin: 1rem 2rem 2.5rem 2rem;
+}
 
 .header .logo img {
   max-width: 150px;
+}
+
+footer{
+ width: 100%;
+ text-align: center;
+ height: 5rem;
+ background-color: #EEE4E5;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
 }

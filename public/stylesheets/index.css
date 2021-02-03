@@ -1,3 +1,4 @@
+
 .header{
   display: flex;
   flex-direction: row;
@@ -10,13 +11,28 @@
 }
 .welcome {
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: space-between;
   min-height: 100vh;
+  background: url("../images/background.svg") no-repeat;
 }
 .landing-img{
   max-width: 50%;
   height: auto;
+}
+.about-us{
+  text-align: center;
+  font-size:xx-large;
+}
+
+
+.second-section-index-body{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.index-body{
+  
 }
 
 .search-weather {
