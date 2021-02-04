@@ -1,0 +1,33 @@
+.form-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.form-input img {
+  width: 30%;
+  height: auto;
+}
+
+.form-input form {
+  width: 30%;
+  height: auto;
+  display: flex;
+  font-size: larger;
+  flex-direction: column;
+  background-image: url("../images/fomback.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.form-input  input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 1rem;
+}
+
+
+.error {
+  font-size: larger;
+}

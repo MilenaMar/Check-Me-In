@@ -4,7 +4,7 @@
   </div>
   <div class="navigation">
     {{#if currentUser}}
-    <a href="/user/profile">My profile</a>
+    <button><a href="/user/profile">My profile</a></button> 
     <form id="logout-form" action="/logout" method="POST">
       <button>Logout</button>
     </form>
@@ -17,19 +17,18 @@
 <div class="index-body">
   <div class="welcome">
     <div class="about-us">
-      <h1> Who we are ?</h1>
-      <p>Check-Me In is A community-blog where people can share their
+      <h1>  Who we are ?</h1>
+      <p> <strong>Check-Me In</strong> is A community-blog where people can share their
         experiences
         traveling
         around the
         globe
         No Rules! <br> Be Nice to others, share your experience let us know what you think about the places you visited
         and
-        enjoy a daily trip reading about the amazing experiences that others like you had while visiting new places.</p>
-      <p> Sign Up today, be part of our community and discover a world of
+        enjoy a daily trip reading about the amazing adventures that others like you had while visiting new places.</p>
+      <p> <strong> <a href="/signup">SingUp</a></strong>  today, be part of our community and discover a world of
         amazing stories. <br>
-        Is everything about learn and discover </p>
-      
+       <h4> Is everything about learn and discover!</h4> </p> 
     </div>
     <img src="../images/home.png" alt="landing" class="landing-img"> 
   </div>
@@ -55,14 +54,14 @@
       <br />
       <span id="icon-current"></i></span>
     </div>
-    <div class=" forecasted" id="forecast">
+    <div class="forecasted" id="forecast">
     </div>
   </div>
 
   <div class="featured">
     <div class="box1">
       <h3>Latest post</h3>
-      <h1>{{posts.0.title}}</h1>
+      <h2>{{posts.0.title}}</h2>
       <h4>By: {{posts.0.author.username}}</h4>
     </div>
     <div>
@@ -72,8 +71,8 @@
       <div class="box3">
         <h3>{{posts.0.description}}</h3>
         <p class="overflow">{{posts.0.body}}</p>
-        <a class="readme" href="/user/readmore/{{posts.0.slug}}">Read full post</a>
-        <a href="/posts">See other posts</a>
+        <button><a class="readme" href="/user/readmore/{{posts.0.slug}}">Read full post</a></button>
+        <button><a href="/posts">See other posts</a></button>
       </div>
     </div>
   </div>

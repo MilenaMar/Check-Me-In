@@ -8,15 +8,18 @@
    </div>
 </div>
 <div class="form-input">
+   <img src="../images/form.png" alt="Form"></img>
    <form action="/login" method="POST">
-      <label for="email">Email:</label>
+      <h1>Login</h1>
+      <label for="email">Email</label>
       <input type="text" id="email" name="email">
-      <label for="password">Password:</label>
+      <label for="password">Password</label>
       <input type="password" id="password" name="password">
       <button type="submit">Submit</button>
-   </form>
-</div>
-
-{{#if errorMessage}}
+         {{#if errorMessage}}
 <p class="error">{{errorMessage}}</p>
 {{/if}}
+   </form>
+
+</div>
+

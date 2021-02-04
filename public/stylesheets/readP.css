@@ -1,0 +1,13 @@
+
+.galery {
+  display: flex;
+  padding: 50px;
+  flex-wrap: wrap;
+  background: url('../images/fomback.png') no-repeat ;
+  justify-content: space-around;
+}
+
+.index-body h1, p {
+ text-align: center;
+}
+
