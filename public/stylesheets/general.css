@@ -29,7 +29,6 @@ p,a, button, span, div {
 
 a:active {
   color: black; 
-  font-size: smaller;
 }
 
 button {
