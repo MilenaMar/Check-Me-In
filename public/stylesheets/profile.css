@@ -1,0 +1,18 @@
+.profile-body {
+  display: flex;
+  justify-content: space-between;
+}
+.index-body h1 {
+  margin: 30px;
+}
+
+.profile-details{
+  text-align: center;
+  margin: 20px;
+}
+
+.profile-details img{
+  max-width: 400px;
+  height: auto;
+  border-radius: 50%;
+}

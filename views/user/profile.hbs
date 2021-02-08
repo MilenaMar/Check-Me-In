@@ -1,5 +1,6 @@
 <div class="header">
-  <div>
+  <div class="logo">
+      <a href="/"><img src="../../images/logo.png" alt="Logo check me in "></a>
   </div>
   <div class="navigation">
     <a href="/">Home page</a>
@@ -10,10 +11,10 @@
     </form>
   </div>
 </div>
-<h1>Welcome to your profile <br>{{currentUser.username}}</h1>
-<h2>My Recent Posts</h2>
-<div class="profile-body">
-  <div class="profile-picture">
+<div class="index-body">
+  <h1>Welcome to your profile <br>{{currentUser.username}}</h1>
+  <div class="profile-body">
+  <div class="profile-details">  
     <img src="{{currentUser.Picture}}" alt="profile picture">
     <form action="/user/upload-profile-picture" method="POST" enctype="multipart/form-data">
       <label for="Picture">Update Profile Picture</label>
@@ -31,15 +32,19 @@
       <p>{{currentUser.about}}</p>
     </div>
   </div>
+  <div class="my-post">
+  <h2>My Recent Posts</h2>
   {{#each currentUser.posts}}
   <div class="featured">
     <h3>{{title}}</h3><br>
     <h4>{{country}}-{{city}}</h4>
     <h5>{{description}}</h5>
     <div>
-      <a href="/post/edit/{{_id}}">Edit Post</a>
-      <a class="readme" href="/user/readmore/{{slug}}">Read full post</a>
+     <button><a href="/post/edit/{{_id}}">Edit Post</a></button> 
+      <button><a class="readme" href="/user/readmore/{{slug}}">Read full post</a></button>
     </div>
   </div>
   {{/each}}
+</div>
+</div>
 </div>

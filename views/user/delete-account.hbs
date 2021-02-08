@@ -1,10 +1,15 @@
 <div class="header">
+  <div class="logo">
+     <a href="/"><img src="../../images/logo.png" alt="Logo check me in "></a>
+  </div>
   <div class="navigation">
+    <a href="/user/profile" class="go-back">Go Back</a>
     <form id="logout-form" action="/logout" method="POST">
       <button>Logout</button>
     </form>
   </div>
 </div>
+<div class="index-body">
 <h1>Are you sure you want to leave Us? </h1>
 <div>
   <form id="delete" action="/user/delete-account" method="POST">
@@ -16,4 +21,5 @@
   {{#if errorMessageP}}
   <span class="errorD">{{errorMessageP}}</span>
   {{/if}}
+</div>
 </div>

@@ -1,15 +1,16 @@
 <div class="header">
   <div class="logo">
-    <a href="/user/profile" class="go-back">Go Back</a>
+     <a href="/"><img src="../../images/logo.png" alt="Logo check me in "></a>
   </div>
   <div class="navigation">
+    <a href="/user/profile" class="go-back">Go Back</a>
     <form id="logout-form" action="/logout" method="POST">
       <button>Logout</button>
     </form>
   </div>
 </div>
+<div class="index-body">
 <h1>Hi <span>{{currentUser.username}}</span> here you can update your profile</h1>
-
 <div class="form-input">
   <div class="update-info">
     <form action="/user/general-settings" method="POST">
@@ -52,3 +53,4 @@
 
   <button>Delete Account <i class="fas fa-exclamation"></i></button>
 </form>
+</div>

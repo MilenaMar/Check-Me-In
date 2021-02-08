@@ -11,3 +11,18 @@
  text-align: center;
 }
 
+.trip-info {
+  background: url('../images/background.svg') repeat ;
+  padding: 0px 40px;
+}
+
+.trip-details > *{
+  text-align: right;
+}
+
+.trip-info img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+}

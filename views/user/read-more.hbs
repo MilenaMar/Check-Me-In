@@ -1,5 +1,6 @@
 <div class="header">
   <div class="logo">
+    <a href="/"><img src="../../images/logo.png" alt="Logo check me in "></a>
   </div>
   <div class="navigation">
     <a href="/">Home page</a>
@@ -10,30 +11,19 @@
     </form>
   </div>
 </div>
-<!--<form id="like" action="/post/like/{{post._id}}" method="POST">
-  <button id="likeb"><i class="fas fa-thumbs-up"></i>Like</button>
-  <br>
-  <span>{{post.likeCount}}</span>
-</form>
-<form id="unlike" action="/post/unlike/{{post._id}}" method="POST">
-  <button id="unlikeb"><i class="fas fa-thumbs-down"></i>UnLike</button>
-</form>-->
-
+<div class="index-body">
 <div class="trip-info">
-  <div>
     <h1>{{post.title}}</h1>
     <h2>by {{post.author.username}}</h2>
     <h3>Country: {{post.country}}</h3>
-  </div>
-  <div>
-    <h5>Date of the trip: <span id="date">{{treatedDate}}</span></h5>
-    <h5>Cities visited: {{post.city}}</h5>
-    <h5>Budget: {{post.budget}} {{post.currency}}</h5>
-    <h5>{{post.days}} days</h5>
-  </div>
-</div>
-<h3>{{post.description}}</h3>
-<div class="post-body">
+    <div class="trip-details">
+    <p>Date of the trip: <span id="date">{{treatedDate}}</span></p>
+    <p>Cities visited: {{post.city}}</p>
+    <p>Budget: {{post.budget}} {{post.currency}}</p>
+    <p>{{post.days}} days</p>
+    </div>
+  <h3>{{post.description}}</h3>
   <p>{{post.body}}</p>
   <img src={{post.image}} alt="trip image">
+</div>
 </div>
